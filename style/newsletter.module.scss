@@ -18,23 +18,17 @@ $white: hsl(0, 0%, 100%);
         align-items: center;
         background-color: $white;
         padding: 2rem 2.5rem;
-        border-radius: 2rem;
+        border-radius: 2.5rem;
         gap: 5rem;
         font-family: 'Roboto', sans-serif;
-        overflow: hidden; // Add overflow property
+        overflow: hidden;
     
-        // Animation styles
-        transition: max-height 0.3s ease-in-out; // Add transition property
-        max-height: 100%; // Set initial height to 100%
+        transition: max-height 0.3s ease-in-out;
+        max-height: 100%;
     
-        // Add class for expanding height
         &.expanded {
-          max-height: none; // Expand height to accommodate the subscribed content
+          max-height: none;
         }
-    
-        // & > div {
-        //     max-width: 50%;
-        // }
     
         & .fade-out {
           opacity: 0;
@@ -45,6 +39,10 @@ $white: hsl(0, 0%, 100%);
 
     &__image {
         border-radius: 1rem;
+
+        &_mobile {
+          display: none;
+        }
     }
     
     &__section {
@@ -111,6 +109,16 @@ $white: hsl(0, 0%, 100%);
         border-radius: .7rem;
         border: .1px solid $grey;
         padding-left: 2rem;
+
+        &.error {
+          border-color: red;
+          background-color: rgba(255, 0, 0, 0.137);
+          color: red;
+
+          &:active {
+            border-color: red;
+          }
+        }
     }
 
     &__form_button {
@@ -124,71 +132,123 @@ $white: hsl(0, 0%, 100%);
         cursor: pointer;
 
         &:hover {
-            background-color: $sec-grey;
-            transition: .3s;
+            background: linear-gradient(90deg, rgba(255,51,51,1) 35%, rgba(255,94,30,1) 100%);;
+            transition: 0.3s;
+            box-shadow: .3rem .3rem .8rem rgba(0, 0, 0, 0.26);
         }
+    }
+  
+    &__form_error {
+      margin-top: 0.5rem;
+      font-size: 1.4rem;
+      color: red;
+    }
+
+    &__form_box {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
 
 }
 
 .subscribed {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    opacity: 0; // Hide the subscribed content initially
-    transition: opacity 0.3s ease-in-out; // Add transition property
-    padding: 3rem;
-    width: 33rem;
-  
-    h2,
-    p {
-      color: $sec-dark;
-    }
-  
-    &__image {
-      width: 5rem;
-      height: 5rem;
-    }
-  
-    &__title {
-      font-size: 5.4rem;
-      font-weight: 800;
-      text-align: left;
-    }
-  
-    &__text {
-      font-size: 1.4rem;
-      font-weight: 800;
-      text-align: left;
-    //   inline-size: 50rem;
-    //   overflow-wrap: break-word;
-    }
-  
-    &__button {
-      background: $sec-grey;
-      font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 3rem;
+  width: 33rem;
+  height: unset;
+
+  h2,
+  p {
+    color: $sec-dark;
+  }
+
+  &__image {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 4.8rem;
+    font-weight: 800;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 2rem;
+  }
+
+  strong {
       font-weight: 700;
-      color: $white;
-      height: 6rem;
-      border-radius: 1rem;
-      border: none;
-      cursor: pointer;
-  
-      &:hover {
-        background: linear-gradient(90deg, rgba(255,51,51,1) 35%, rgba(255,94,30,1) 100%);;
-        transition: 0.3s;
-        box-shadow: .3rem .3rem .8rem rgba(0, 0, 0, 0.26);
-      }
-    }
-  
-    // Add class for showing subscribed content
-    &.show {
-      opacity: 1; // Show the subscribed content
+  }
+
+  &__button {
+    background: $sec-grey;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $white;
+    height: 6rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: linear-gradient(90deg, rgba(255,51,51,1) 35%, rgba(255,94,30,1) 100%);
+      transition: 0.3s;
+      box-shadow: .3rem .3rem .8rem rgba(0, 0, 0, 0.26);
     }
   }
-  
 
-#__next {
-    height: 100%;
-    width: 100%;
+  &.show {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .news {
+
+    &__container {
+      flex-direction: column-reverse;
+      padding: unset;
+      height: 100%;
+      border-radius: unset;
+
+
+      & > div {
+        padding: 0 2rem;
+      }
+    }
+
+    &__image {
+      border-radius: 1rem;
+      display: none;
+
+      &_mobile {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &__form_form {
+      margin-bottom: 2rem;
+    }
+
+  }
+
+  .subscribed {
+    width: unset;
+    height: 100vh;
+    justify-content: space-around;
+  }
+
 }
