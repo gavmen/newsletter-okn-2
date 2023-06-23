@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$prim: hsl(4, 100%, 67%);
+$sec-dark: hsl(234, 29%, 20%);
+$sec-grey: hsl(235, 18%, 26%);
+$grey: hsl(231, 7%, 60%);
+$white: hsl(0, 0%, 100%);
+
+.news {
+
+    h2, p {
+        color: $sec-dark;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $white;
+        padding: 2rem 2.5rem;
+        border-radius: 2rem;
+        gap: 5rem;
+        font-family: 'Roboto', sans-serif;
+        overflow: hidden; // Add overflow property
+    
+        // Animation styles
+        transition: max-height 0.3s ease-in-out; // Add transition property
+        max-height: 100%; // Set initial height to 100%
+    
+        // Add class for expanding height
+        &.expanded {
+          max-height: none; // Expand height to accommodate the subscribed content
+        }
+    
+        // & > div {
+        //     max-width: 50%;
+        // }
+    
+        & .fade-out {
+          opacity: 0;
+          transition: opacity 0.3s ease-out;
+        }
+        
+      }
+
+    &__image {
+        border-radius: 1rem;
+    }
+    
+    &__section {
+
+    }
+
+    &__content {
+        //margin-bottom: 6rem;
+    }
+
+    &__title {
+        margin-bottom: 4rem;
+        font-size: 5.4rem;
+        font-weight: 800;
+        text-align: left;
+    }
+
+    &__text {
+        margin-bottom: 4rem;
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-align: left;
+        // max-width: fit-content;
+    }
+
+    &__list {
+        
+        & li {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 1.7rem;
+
+            & img {
+                margin-right: 1.5rem;
+            }
+
+            & p {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    &__form_container {
+        
+    }
+
+    &__form_text {
+        margin-top: 6rem;
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    &__form_form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__form_input {
+        height: 6rem;
+        border-radius: .7rem;
+        border: .1px solid $grey;
+        padding-left: 2rem;
+    }
+
+    &__form_button {
+        background-color: $sec-dark;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: $white;
+        height: 6rem;
+        border-radius: 1rem;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $sec-grey;
+            transition: .3s;
+        }
+    }
+
+}
+
+.subscribed {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    opacity: 0; // Hide the subscribed content initially
+    transition: opacity 0.3s ease-in-out; // Add transition property
+    padding: 3rem;
+    width: 33rem;
+  
+    h2,
+    p {
+      color: $sec-dark;
+    }
+  
+    &__image {
+      width: 5rem;
+      height: 5rem;
+    }
+  
+    &__title {
+      font-size: 5.4rem;
+      font-weight: 800;
+      text-align: left;
+    }
+  
+    &__text {
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-align: left;
+    //   inline-size: 50rem;
+    //   overflow-wrap: break-word;
+    }
+  
+    &__button {
+      background: $sec-grey;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: $white;
+      height: 6rem;
+      border-radius: 1rem;
+      border: none;
+      cursor: pointer;
+  
+      &:hover {
+        background: linear-gradient(90deg, rgba(255,51,51,1) 35%, rgba(255,94,30,1) 100%);;
+        transition: 0.3s;
+        box-shadow: .3rem .3rem .8rem rgba(0, 0, 0, 0.26);
+      }
+    }
+  
+    // Add class for showing subscribed content
+    &.show {
+      opacity: 1; // Show the subscribed content
+    }
+  }
+  
+
+#__next {
+    height: 100%;
+    width: 100%;
+}
