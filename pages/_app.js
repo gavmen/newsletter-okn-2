@@ -41,7 +41,10 @@ body {
 	display: flex;
     justify-content: center;
     align-items: center;
-	background-color: hsl(234, 29%, 20%);
+	// background-color: hsl(235, 18%, 26%);
+	background: url(https://images.unsplash.com/photo-1570876050997-2fdefb00c004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80);
+
+	background-size: cover;
 }
 ol, ul {
 	list-style: none;
