@@ -12,7 +12,7 @@ class NewsletterPage extends React.Component {
   }
 
   componentDidMount() {
-    document.title = 'Coiso la';
+    document.title = 'Newsletter | OKN';
   }
 
   handleEmailChange = (event) => {
@@ -86,7 +86,7 @@ class NewsletterPage extends React.Component {
     const { email, subscribed, emailError } = this.state;
 
     return (
-      <section className={`${styles.news__container} ${subscribed ? styles.expanded : ''}`}>
+      <section className={`${styles.news__container} ${subscribed}`}>
         <div className={styles.news__section}>
           <div className={styles.news__content}>
             {this.renderContent()}

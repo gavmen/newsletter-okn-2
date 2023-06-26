@@ -26,15 +26,6 @@ $white: #ffffff;
     color: #ededed;
     transition: max-height 0.3s ease-in-out;
     max-height: 100%;
-
-    &.expanded {
-      max-height: none;
-    }
-
-    & .fade-out {
-      opacity: 0;
-      transition: opacity 0.3s ease-out;
-    }
   }
 
   &__image {
@@ -174,11 +165,6 @@ $white: #ffffff;
       transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
     }
     
-    &_button span::before {
-      // content: 'Hello!';
-      top: -100%;
-    }
-    
     &_button:before {
       top: 0;
       left: 0;
@@ -254,15 +240,10 @@ $white: #ffffff;
   flex-direction: column;
   gap: 2rem;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
   padding: 3rem;
   width: 33rem;
   height: unset;
-
-  h2,
-  p {
-    // color: $sec-dark;
-  }
+  transition: height 5s ease-in-out;
 
   &__image {
     width: 5rem;
@@ -339,11 +320,6 @@ $white: #ffffff;
             justify-content: center;
     -webkit-transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
     transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
-  }
-  
-  &__button span::before {
-    // content: 'Hello!';
-    top: -100%;
   }
   
   &__button:before {
